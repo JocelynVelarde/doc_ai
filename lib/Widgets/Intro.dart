@@ -50,7 +50,7 @@ Container otherSignUpButtons = Container(
       Expanded(
           child: Icon(
         Icons.login,
-        color: Colors.red,
+        color: red,
       ))
     ],
   ),
