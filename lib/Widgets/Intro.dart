@@ -1,63 +1,60 @@
 import 'package:doc_ai/Constants/Colors.dart';
+import 'package:doc_ai/Pages/LoginPage.dart';
 import 'package:flutter/material.dart';
 
+import '../Constants/Directions.dart';
 import '../Constants/TextStyle.dart';
 
 Container logoImage = Container(
-  padding: EdgeInsets.all(12),
-  child: Image.asset('assets/backgroundGradient.png'),
+  padding: EdgeInsets.all(20),
+  child: Image.asset('assets/Logo.png', height: 200, width: 200),
 );
 
 Container introText = Container(
-  padding: EdgeInsets.all(12),
-  child: Text(
-    "Welcome to Med.ai!",
-    textAlign: TextAlign.center,
-    style: titleText,
-  ),
-);
-
-Container emailSignUpButton = Container(
-  padding: EdgeInsets.all(12),
-  child: Material(
-    elevation: 5,
-    borderRadius: BorderRadius.circular(30),
-    color: white,
-    child: MaterialButton(
-      minWidth: 200,
-      padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-      onPressed: () {},
-      child: Text(
-        "Sign Up with Email",
+  padding: EdgeInsets.only(top: 40, bottom: 20),
+  child: Column(
+    children: [
+      Text(
+        "Sign up to get started",
         textAlign: TextAlign.center,
-        style: buttonText,
+        style: titleText,
       ),
-    ),
+      SizedBox(height: 10),
+      Text("It´s easier that way",
+          textAlign: TextAlign.center, style: plainText)
+    ],
   ),
 );
 
 Container otherSignUpButtons = Container(
-  padding: EdgeInsets.all(12),
+  padding: const EdgeInsets.all(12),
   child: Row(
-    mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
-      Expanded(
-        child: const Icon(
-          Icons.facebook,
-          color: Colors.blue,
+      Padding(
+        padding: const EdgeInsets.only(left: 145, right: 10),
+        child: IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.facebook,
+            color: blue,
+            size: 35,
+          ),
         ),
       ),
-      Expanded(
-          child: Icon(
-        Icons.login,
-        color: red,
-      ))
+      IconButton(
+        onPressed: () {},
+        icon: const Icon(
+          Icons.phone,
+          color: darkgreen,
+          size: 35,
+        ),
+      )
     ],
   ),
 );
 
 Container loginTextButton = Container(
-  padding: EdgeInsets.all(12),
+  padding: EdgeInsets.only(top: 30),
   child: Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
@@ -66,12 +63,18 @@ Container loginTextButton = Container(
         textAlign: TextAlign.center,
         style: plainText,
       ),
-      TextButton(
-        onPressed: () {},
-        child: Text(
-          "Login",
-          style: TextStyle(color: purple),
-        ),
+      Builder(
+        builder: (BuildContext context) {
+          return TextButton(
+            onPressed: () {
+              navigateToLoginPage(context);
+            },
+            child: Text(
+              "Login",
+              style: plainPurpleText,
+            ),
+          );
+        },
       ),
     ],
   ),

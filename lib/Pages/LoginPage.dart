@@ -1,72 +1,31 @@
+import 'package:doc_ai/Constants/Colors.dart';
+import 'package:doc_ai/Widgets/Intro.dart';
+import 'package:doc_ai/Widgets/Login.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
-  LoginPage({Key? key}) : super(key: key);
-
-  @override
-  State<StatefulWidget> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
+//create a screen using the widgets from intro
+class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final emailField = TextField(
-      obscureText: false,
-      style: TextStyle(color: Colors.white),
-      decoration: InputDecoration(
-        contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-        hintText: "Email",
-        hintStyle: TextStyle(color: Colors.white),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32),
+    return Scaffold(
+      body: Container(
+        color: white,
+        //create a column to stack the widgets
+        child: ListView(
+          children: [
+            //add the widgets from intro.dart
+            welcomeText,
+            loginTextField,
+            passwordTextField,
+            Container(
+              padding: EdgeInsets.only(top: 60, bottom: 12, left: 30, right: 30),
+              child: loginButton,
+            ),
+            otherSignUpButtons,
+            loginTextButton,
+          ],
         ),
       ),
     );
-    final passwordField = TextField(
-      obscureText: true,
-      style: TextStyle(color: Colors.white),
-      decoration: InputDecoration(
-        contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-        hintText: "Password",
-        hintStyle: TextStyle(color: Colors.white),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32),
-        ),
-      ),
-    );
-    final loginButton = Material(
-      elevation: 5,
-      borderRadius: BorderRadius.circular(30),
-      color: Colors.white,
-      child: MaterialButton(
-        minWidth: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-        onPressed: () {},
-        child: Text(
-          "Login",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-    );
-    final forgotPassword = TextButton(
-      onPressed: () {},
-      child: Text(
-        "Forgot Password?",
-        style: TextStyle(color: Colors.white),
-      ),
-    );
-    return SafeArea(
-        child: Scaffold(
-            body: Center(
-      child: ListView(
-        shrinkWrap: true,
-        padding: EdgeInsets.symmetric(horizontal: 20),
-        children: [emailField, passwordField, forgotPassword, loginButton],
-      ),
-    )));
   }
 }

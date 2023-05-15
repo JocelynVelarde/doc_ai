@@ -1,23 +1,31 @@
 import 'package:flutter/cupertino.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'Colors.dart';
 
-const TextStyle buttonText = TextStyle(
+TextStyle buttonText = TextStyle(
   color: white,
-  fontSize: 20,
-  fontFamily: 'Montserrat',
-  fontWeight: FontWeight.bold,
-);
-
-const TextStyle plainText = TextStyle(
-  color: black,
-  fontSize: 14,
-  fontFamily: 'Montserrat',
+  fontSize: 16,
+  fontFamily: GoogleFonts.lato().fontFamily,
   fontWeight: FontWeight.normal,
 );
 
-const TextStyle titleText = TextStyle(
-  color: darkPurple,
+TextStyle plainText = TextStyle(
+  color: black,
+  fontSize: 17,
+  fontFamily: GoogleFonts.lato().fontFamily,
+  fontWeight: FontWeight.normal,
+);
+
+TextStyle plainPurpleText = TextStyle(
+  color: purple,
+  fontSize: 17,
+  fontFamily: GoogleFonts.lato().fontFamily,
+  fontWeight: FontWeight.normal,
+);
+
+TextStyle titleText = TextStyle(
+  color: black,
   fontSize: 25,
-  fontFamily: 'Montserrat',
+  fontFamily: GoogleFonts.lato().fontFamily,
   fontWeight: FontWeight.bold,
 );

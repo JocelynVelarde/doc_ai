@@ -1,3 +1,4 @@
+import 'package:doc_ai/Pages/IntroPage.dart';
 import 'package:doc_ai/Pages/LoginPage.dart';
 import 'package:flutter/material.dart';
 
@@ -9,12 +10,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter layout demo',
+      title: 'Med.ai',
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter layout demo'),
-        ),
-        body: LoginPage(),
+        body: IntroPage(),
       ),
     );
   }
